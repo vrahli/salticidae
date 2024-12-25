@@ -243,7 +243,8 @@ class MsgNetwork: public ConnPool {
                         static_pointer_cast<typename callback_t::conn_type>(conn));
             } catch (std::exception &e) {
                 SALTICIDAE_LOG_WARN(
-                    "error while parsing: %s, terminating the connection",
+                    "error while parsing [%d]: %s, terminating the connection",
+                    msg.get_opcode(),
                     e.what());
                 this->worker_terminate(conn);
             }

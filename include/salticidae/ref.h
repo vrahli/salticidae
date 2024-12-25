@@ -27,6 +27,7 @@
 
 #include <atomic>
 #include <functional>
+#include <cstdint>
 
 namespace salticidae {
 
